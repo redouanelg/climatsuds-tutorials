@@ -1,0 +1,53 @@
+name: Build notebooks to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install nbconvert
+        run: pip install --upgrade nbconvert
+      - name: Convert notebooks to static HTML
+        run: |
+          set -e
+          mkdir -p _site
+          find . -name '*.ipynb' -not -path './_site/*' -not -path './.git/*' -print0 \
+            | while IFS= read -r -d '' nb; do
+                rel="${nb#./}"
+                outdir="_site/$(dirname "$rel")"
+                mkdir -p "$outdir"
+                python -m nbconvert --to html --embed-images \
+                  --output-dir "$outdir" \
+                  --output "$(basename "${rel%.ipynb}")" "$nb"
+              done
+          printf '%s\n' '<!doctype html><meta charset="utf-8"><title>ClimatSuds tutorials</title><h1>ClimatSuds tutorials</h1><p>Rendered notebooks for the ClimatSuds Learning section.</p>' > _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
