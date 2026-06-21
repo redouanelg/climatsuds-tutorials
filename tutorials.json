@@ -1,0 +1,19 @@
+{
+  "tutorials": [
+    {
+      "id": "arraylake-era5-access",
+      "type": "notebook",
+      "tags": ["data-access", "era5", "python"],
+      "lang": "en",
+      "title": {
+        "en": "Accessing ERA5 data with Arraylake",
+        "fr": "Accéder aux données ERA5 avec Arraylake"
+      },
+      "desc": {
+        "en": "Open and explore ERA5 reanalysis data from the cloud with Arraylake and xarray.",
+        "fr": "Ouvrir et explorer les données de réanalyse ERA5 depuis le cloud avec Arraylake et xarray."
+      },
+      "notebook": "Data_Access/arraylake_era5_access.ipynb"
+    }
+  ]
+}
