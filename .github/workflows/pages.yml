@@ -38,6 +38,16 @@ jobs:
                   --output "$(basename "${rel%.ipynb}")" "$nb"
               done
           printf '%s\n' '<!doctype html><meta charset="utf-8"><title>ClimatSuds tutorials</title><h1>ClimatSuds tutorials</h1><p>Rendered notebooks for the ClimatSuds Learning section.</p>' > _site/index.html
+      - name: Publish tutorials manifest
+        run: |
+          set -e
+          if [ -f tutorials.json ]; then
+            python -c "import json; json.load(open('tutorials.json'))"  # fail fast on malformed JSON
+            cp tutorials.json _site/tutorials.json
+            echo "Published tutorials.json"
+          else
+            echo "No tutorials.json found; skipping."
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
