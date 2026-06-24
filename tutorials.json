@@ -29,6 +29,21 @@
         "fr": "Rechercher et ouvrir les précipitations quotidiennes NASA GPM IMERG v7 depuis le cloud avec earthaccess et xarray, puis les cartographier sur l'Afrique de l'Ouest."
       },
       "notebook": "Data_Access/imerg_v7_daily_west_africa_access.ipynb"
+    },
+    {
+      "id": "ghcn-casablanca-station",
+      "type": "notebook",
+      "tags": ["data-access", "ghcn", "station-observations", "morocco", "temperature", "python"],
+      "lang": "en",
+      "title": {
+        "en": "Casablanca's climate from ground stations (GHCN-Daily)",
+        "fr": "Le climat de Casablanca à partir de stations au sol (GHCN-Daily)"
+      },
+      "desc": {
+        "en": "Read 80 years of daily station observations for Casablanca from NOAA GHCN-Daily (anonymous cloud access) with pandas, and chart its seasonal cycle, warming trend, and rainfall variability.",
+        "fr": "Lire 80 ans d'observations quotidiennes de station pour Casablanca depuis NOAA GHCN-Daily (accès cloud anonyme) avec pandas, et tracer son cycle saisonnier, sa tendance au réchauffement et la variabilité des pluies."
+      },
+      "notebook": "Data_Access/casablanca_ghcn_station_observations.ipynb"
     }
   ]
 }
