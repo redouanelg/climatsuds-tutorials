@@ -24,6 +24,18 @@ jobs:
           python-version: "3.12"
       - name: Install nbconvert
         run: pip install --upgrade nbconvert
+      - name: Strip Colab widget metadata (avoids nbconvert KeyError 'state')
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          for nb in pathlib.Path('.').rglob('*.ipynb'):
+              if any(p in ('_site', '.git') for p in nb.parts):
+                  continue
+              data = json.loads(nb.read_text())
+              if data.get('metadata', {}).pop('widgets', None) is not None:
+                  nb.write_text(json.dumps(data, indent=1, ensure_ascii=False) + '\n')
+                  print(f'stripped widgets metadata from {nb}')
+          PY
       - name: Convert notebooks to static HTML
         run: |
           set -e
