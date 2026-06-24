@@ -14,6 +14,21 @@
         "fr": "Ouvrir et explorer les données de réanalyse ERA5 depuis le cloud avec Arraylake et xarray."
       },
       "notebook": "Data_Access/arraylake_era5_access.ipynb"
+    },
+    {
+      "id": "imerg-v7-daily-west-africa",
+      "type": "notebook",
+      "tags": ["data-access", "imerg", "precipitation", "west-africa", "python"],
+      "lang": "en",
+      "title": {
+        "en": "Accessing daily IMERG v7 precipitation over West Africa",
+        "fr": "Accéder aux précipitations quotidiennes IMERG v7 sur l'Afrique de l'Ouest"
+      },
+      "desc": {
+        "en": "Search and open NASA GPM IMERG v7 daily precipitation from the cloud with earthaccess and xarray, then map it over West Africa.",
+        "fr": "Rechercher et ouvrir les précipitations quotidiennes NASA GPM IMERG v7 depuis le cloud avec earthaccess et xarray, puis les cartographier sur l'Afrique de l'Ouest."
+      },
+      "notebook": "Data_Access/imerg_v7_daily_west_africa_access.ipynb"
     }
   ]
 }
