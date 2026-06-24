@@ -40,8 +40,8 @@
         "fr": "Le climat de Casablanca à partir de stations au sol (GHCN-Daily)"
       },
       "desc": {
-        "en": "Read 80 years of daily station observations for Casablanca from NOAA GHCN-Daily (anonymous cloud access) with pandas, and chart its seasonal cycle, warming trend, and rainfall variability.",
-        "fr": "Lire 80 ans d'observations quotidiennes de station pour Casablanca depuis NOAA GHCN-Daily (accès cloud anonyme) avec pandas, et tracer son cycle saisonnier, sa tendance au réchauffement et la variabilité des pluies."
+        "en": "Read daily station observations for Casablanca since 1980 from NOAA GHCN-Daily (anonymous cloud access) with pandas, and chart its seasonal cycle, warming trend, and rainfall variability.",
+        "fr": "Lire les observations quotidiennes de station pour Casablanca depuis 1980 (NOAA GHCN-Daily, accès cloud anonyme) avec pandas, et tracer son cycle saisonnier, sa tendance au réchauffement et la variabilité des pluies."
       },
       "notebook": "Data_Access/casablanca_ghcn_station_observations.ipynb"
     }
