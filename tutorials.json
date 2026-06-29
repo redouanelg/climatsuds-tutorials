@@ -3,7 +3,13 @@
     {
       "id": "arraylake-era5-access",
       "type": "notebook",
-      "tags": ["data-access", "era5", "reanalysis", "temperature", "global"],
+      "tags": [
+        "data-access",
+        "era5",
+        "reanalysis",
+        "temperature",
+        "global"
+      ],
       "lang": "en",
       "title": {
         "en": "Accessing ERA5 data with Arraylake",
@@ -18,7 +24,13 @@
     {
       "id": "imerg-v7-daily-west-africa",
       "type": "notebook",
-      "tags": ["data-access", "imerg", "satellite", "precipitation", "africa"],
+      "tags": [
+        "data-access",
+        "imerg",
+        "satellite",
+        "precipitation",
+        "africa"
+      ],
       "lang": "en",
       "title": {
         "en": "Accessing daily IMERG v7 precipitation over West Africa",
@@ -33,7 +45,13 @@
     {
       "id": "ghcn-casablanca-station",
       "type": "notebook",
-      "tags": ["data-access", "ghcn", "station-observations", "temperature", "africa"],
+      "tags": [
+        "data-access",
+        "ghcn",
+        "station-observations",
+        "temperature",
+        "africa"
+      ],
       "lang": "en",
       "title": {
         "en": "Casablanca's climate from ground stations (GHCN-Daily)",
@@ -44,6 +62,26 @@
         "fr": "Lire les observations quotidiennes de station pour Casablanca depuis 1980 (NOAA GHCN-Daily, accès cloud anonyme) avec pandas, et tracer son cycle saisonnier, sa tendance au réchauffement et la variabilité des pluies."
       },
       "notebook": "Data_Access/casablanca_ghcn_station_observations.ipynb"
+    },
+    {
+      "id": "hydro-climatic-modelling-workflow",
+      "type": "guide",
+      "tags": [
+        "hydrology",
+        "modelling",
+        "bias-correction",
+        "floods"
+      ],
+      "lang": "en",
+      "title": {
+        "en": "Hydro-Climatic Modelling Workflow: A Practical Guide",
+        "fr": "Workflow de modélisation hydro-climatique : guide pratique"
+      },
+      "desc": {
+        "en": "An end-to-end, hands-on workflow for hydro-climatic modelling: model calibration, bias correction, hydrological simulation, and extreme-flood analysis.",
+        "fr": "Une chaîne de traitement complète et pratique pour la modélisation hydro-climatique : calibration des modèles, correction de biais, simulation hydrologique et analyse des crues extrêmes."
+      },
+      "url": "https://sbdiop.quarto.pub/hydro-climatic-modelling-workflow-a-practical-guide/"
     }
   ]
 }
