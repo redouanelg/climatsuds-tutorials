@@ -47,8 +47,8 @@ def validate():
     for i, t in enumerate(data["tutorials"]):
         loc = f'entry #{i} (id={t.get("id", "?")})'
 
-        # required common fields
-        for key in ("id", "type", "tags", "lang", "title", "desc"):
+        # required common fields (tags handled per-type below)
+        for key in ("id", "type", "lang", "title", "desc"):
             if key not in t:
                 errors.append(f"{loc}: missing required field '{key}'")
 
@@ -71,9 +71,15 @@ def validate():
                 errors.append(f"{loc}: notebooks need a 'notebook' path")
             elif not (ROOT / nb).is_file():
                 errors.append(f"{loc}: notebook file not found: {nb}")
+            if "tags" not in t:
+                errors.append(f"{loc}: notebooks need a 'tags' list")
+            else:
+                errors.extend(_validate_tags(t["tags"], loc))
         elif ttype == "video":
             if not t.get("canalu"):
                 errors.append(f"{loc}: videos need a 'canalu' URL")
+            if t.get("tags"):  # absent or empty is fine — videos carry no tags
+                errors.append(f"{loc}: videos must not have tags (omit the field)")
 
         # lang
         if t.get("lang") not in ("en", "fr"):
@@ -88,9 +94,6 @@ def validate():
                         errors.append(f"{loc}: {key}.{code} must be a non-empty string")
             elif key in t:
                 errors.append(f"{loc}: {key} must be an object with 'en' and 'fr'")
-
-        # tags — the heart of the scheme
-        errors.extend(_validate_tags(t.get("tags"), loc))
 
     return errors
 

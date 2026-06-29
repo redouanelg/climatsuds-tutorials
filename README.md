@@ -45,7 +45,8 @@ notebook, so no data or credentials are ever needed.
 
 Tags are the **sidebar filters** on the Learning tab, so they follow a fixed
 scheme: **at most 5 tags**, each drawn from the vocabulary below, with **exactly
-one `section`** tag. Most notebooks use one tag per facet. CI runs
+one `section`** tag. Most notebooks use one tag per facet. **Videos carry no
+tags** — omit the field. CI runs
 [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) and **fails the
 build** if an entry breaks these rules.
 
@@ -70,7 +71,6 @@ Videos are not stored here — only referenced. On the Canal-U video page, open
 {
   "id": "platform-overview",
   "type": "video",
-  "tags": ["getting-started"],
   "lang": "fr",
   "title": { "en": "Platform overview", "fr": "Présentation de la plateforme" },
   "desc":  { "en": "A short tour.", "fr": "Une visite rapide." },
@@ -91,7 +91,7 @@ The file is a single object: `{ "tutorials": [ … ] }`.
 |------------------|------------|-------|
 | `id`             | all        | unique, stable slug |
 | `type`           | all        | `"notebook"` or `"video"` |
-| `tags`           | all        | controlled vocabulary, **max 5**, one per facet → sidebar filters (see [Tags](#tags-controlled-vocabulary)) |
+| `tags`           | notebooks  | controlled vocabulary, **max 5**, one per facet → sidebar filters (see [Tags](#tags-controlled-vocabulary)); videos carry none |
 | `lang`           | all        | `"en"` or `"fr"` (informational) |
 | `title` / `desc` | all        | objects with `en` and `fr` keys (bilingual) |
 | `notebook`       | notebooks  | path to the `.ipynb` relative to repo root |
