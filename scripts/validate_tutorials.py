@@ -4,9 +4,13 @@
 Run locally:   python scripts/validate_tutorials.py
 CI runs this before publishing; a non-zero exit fails the Pages build.
 
-Every tag must come from the controlled vocabulary below, organised by facet
-(section / dataset / source-type / variable / region). To introduce a new
-dataset, region, variable, etc., add it to VOCAB here in the same commit.
+Tag rules by type:
+  - notebook : 1-5 tags, all from the controlled VOCAB below (one per facet:
+               section / dataset / source-type / variable / region), exactly
+               one `section`. Add new vocabulary values to VOCAB in the same commit.
+  - guide    : up to 5 free-form topical tags (lowercase kebab-case, not the
+               controlled vocabulary); requires a `url`.
+  - video    : no tags; requires a `canalu` URL.
 """
 import json
 import re
@@ -63,8 +67,8 @@ def validate():
 
         # type + the field it implies
         ttype = t.get("type")
-        if ttype not in ("notebook", "video"):
-            errors.append(f'{loc}: type must be "notebook" or "video" (got {ttype!r})')
+        if ttype not in ("notebook", "video", "guide"):
+            errors.append(f'{loc}: type must be "notebook", "video" or "guide" (got {ttype!r})')
         elif ttype == "notebook":
             nb = t.get("notebook")
             if not nb:
@@ -80,6 +84,13 @@ def validate():
                 errors.append(f"{loc}: videos need a 'canalu' URL")
             if t.get("tags"):  # absent or empty is fine — videos carry no tags
                 errors.append(f"{loc}: videos must not have tags (omit the field)")
+        elif ttype == "guide":
+            url = t.get("url")
+            if not url:
+                errors.append(f"{loc}: guides need a 'url'")
+            elif not (isinstance(url, str) and url.startswith("http")):
+                errors.append(f"{loc}: guide 'url' must be an http(s) link")
+            errors.extend(_validate_freeform_tags(t.get("tags"), loc))
 
         # lang
         if t.get("lang") not in ("en", "fr"):
@@ -122,6 +133,23 @@ def _validate_tags(tags, loc):
     if sections != 1:
         errs.append(f"{loc}: must have exactly one 'section' tag "
                     f"({sorted(VOCAB['section'])}); found {sections}")
+    return errs
+
+
+def _validate_freeform_tags(tags, loc):
+    """Guides may carry up to MAX_TAGS free-form topical tags (no fixed vocabulary)."""
+    if not tags:  # absent or empty is fine
+        return []
+    if not isinstance(tags, list):
+        return [f"{loc}: tags must be a list"]
+    errs = []
+    if len(tags) > MAX_TAGS:
+        errs.append(f"{loc}: at most {MAX_TAGS} tags (has {len(tags)})")
+    if len(tags) != len(set(tags)):
+        errs.append(f"{loc}: duplicate tags")
+    for tag in tags:
+        if not isinstance(tag, str) or not SLUG.match(tag):
+            errs.append(f"{loc}: tag {tag!r} must be lowercase kebab-case")
     return errs
 
 

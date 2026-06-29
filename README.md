@@ -43,10 +43,11 @@ notebook, so no data or credentials are ever needed.
 
 ## Tags (controlled vocabulary)
 
-Tags are the **sidebar filters** on the Learning tab, so they follow a fixed
-scheme: **at most 5 tags**, each drawn from the vocabulary below, with **exactly
-one `section`** tag. Most notebooks use one tag per facet. **Videos carry no
-tags** — omit the field. CI runs
+Tags are the **sidebar filters** on the Learning tab. **Notebooks** follow a
+fixed scheme: **at most 5 tags**, each drawn from the vocabulary below, with
+**exactly one `section`** tag (typically one per facet). **Guides** use up to 5
+*free-form* topical tags (lowercase kebab-case, not this vocabulary). **Videos
+carry no tags** — omit the field. CI runs
 [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) and **fails the
 build** if an entry breaks these rules.
 
@@ -78,6 +79,23 @@ Videos are not stored here — only referenced. On the Canal-U video page, open
 }
 ```
 
+## Add a guide (external link)
+
+Guides are externally hosted pages (e.g. a Quarto site) — referenced, not stored.
+Add an entry with the page `url` and up to 5 free-form topical tags:
+
+```json
+{
+  "id": "hydro-climatic-modelling-workflow",
+  "type": "guide",
+  "tags": ["hydrology", "modelling", "bias-correction", "floods"],
+  "lang": "en",
+  "title": { "en": "English title", "fr": "Titre français" },
+  "desc":  { "en": "One-line summary.", "fr": "Résumé en une ligne." },
+  "url": "https://example.quarto.pub/my-guide/"
+}
+```
+
 ## Remove a tutorial
 
 Delete its entry from `tutorials.json` and the card disappears. For notebooks,
@@ -90,17 +108,18 @@ The file is a single object: `{ "tutorials": [ … ] }`.
 | field            | applies to | notes |
 |------------------|------------|-------|
 | `id`             | all        | unique, stable slug |
-| `type`           | all        | `"notebook"` or `"video"` |
-| `tags`           | notebooks  | controlled vocabulary, **max 5**, one per facet → sidebar filters (see [Tags](#tags-controlled-vocabulary)); videos carry none |
+| `type`           | all        | `"notebook"`, `"video"` or `"guide"` |
+| `tags`           | notebooks, guides | notebooks: controlled vocabulary, one per facet (see [Tags](#tags-controlled-vocabulary)); guides: up to 5 free-form tags; videos: none |
 | `lang`           | all        | `"en"` or `"fr"` (informational) |
 | `title` / `desc` | all        | objects with `en` and `fr` keys (bilingual) |
 | `notebook`       | notebooks  | path to the `.ipynb` relative to repo root |
 | `canalu`         | videos     | Canal-U iframe embed URL |
+| `url`            | guides     | link to the externally hosted guide (e.g. Quarto) |
 
 `tutorials.json` is validated in CI by
 [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) — malformed JSON,
-missing fields, an unknown tag, or more than 5 tags fail the build before
-anything is published.
+missing fields, an out-of-vocabulary notebook tag, more than 5 tags, or a guide
+without a `url` fail the build before anything is published.
 
 ## Where it shows up
 
