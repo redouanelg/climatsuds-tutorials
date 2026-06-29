@@ -82,6 +82,26 @@
         "fr": "Une chaîne de traitement complète et pratique pour la modélisation hydro-climatique : calibration des modèles, correction de biais, simulation hydrologique et analyse des crues extrêmes."
       },
       "url": "https://sbdiop.quarto.pub/hydro-climatic-modelling-workflow-a-practical-guide/"
+    },
+    {
+      "id": "introduction-to-extreme-value-analysis",
+      "type": "guide",
+      "tags": [
+        "extreme-value-analysis",
+        "statistics",
+        "hydrology",
+        "floods"
+      ],
+      "lang": "en",
+      "title": {
+        "en": "Introduction to Extreme Value Analysis",
+        "fr": "Introduction à l'analyse des valeurs extrêmes"
+      },
+      "desc": {
+        "en": "A hands-on tutorial on extreme value analysis for hydrological data: block-maxima (GEV) and peaks-over-threshold (POT) approaches.",
+        "fr": "Un tutoriel pratique sur l'analyse des valeurs extrêmes pour les données hydrologiques : approches des maxima par blocs (GEV) et des dépassements de seuil (POT)."
+      },
+      "url": "https://diopbachir.github.io/tp_eva/"
     }
   ]
 }
