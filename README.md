@@ -32,7 +32,7 @@ notebook, so no data or credentials are ever needed.
    {
      "id": "unique-slug",
      "type": "notebook",
-     "tags": ["data-access", "python"],
+     "tags": ["data-access", "era5", "reanalysis", "temperature", "global"],
      "lang": "en",
      "title": { "en": "English title", "fr": "Titre français" },
      "desc":  { "en": "One-line summary.", "fr": "Résumé en une ligne." },
@@ -40,6 +40,26 @@ notebook, so no data or credentials are ever needed.
    }
    ```
 3. Commit & push to `main`. Within ~1–2 min the card appears on the Learning tab.
+
+## Tags (controlled vocabulary)
+
+Tags are the **sidebar filters** on the Learning tab, so they follow a fixed
+scheme: **at most 5 tags**, each drawn from the vocabulary below, with **exactly
+one `section`** tag. Most notebooks use one tag per facet. CI runs
+[`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) and **fails the
+build** if an entry breaks these rules.
+
+| facet         | allowed values |
+|---------------|----------------|
+| `section`     | `data-access`, `getting-started`, `analysis`, `visualization`, `modeling` |
+| `dataset`     | `era5`, `imerg`, `ghcn` |
+| `source-type` | `reanalysis`, `satellite`, `station-observations` |
+| `variable`    | `temperature`, `precipitation` |
+| `region`      | `global`, `africa`, `europe`, `asia`, `americas`, `oceania`, `antarctica` |
+
+Need a value that isn't listed (a new dataset, variable, region…)? Add it to
+`VOCAB` in [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) in the
+same commit, then use it. Check locally first: `python scripts/validate_tutorials.py`.
 
 ## Add a video tutorial (Canal-U)
 
@@ -71,13 +91,15 @@ The file is a single object: `{ "tutorials": [ … ] }`.
 |------------------|------------|-------|
 | `id`             | all        | unique, stable slug |
 | `type`           | all        | `"notebook"` or `"video"` |
-| `tags`           | all        | list of topics → these become the sidebar filters (folders do **not**) |
+| `tags`           | all        | controlled vocabulary, **max 5**, one per facet → sidebar filters (see [Tags](#tags-controlled-vocabulary)) |
 | `lang`           | all        | `"en"` or `"fr"` (informational) |
 | `title` / `desc` | all        | objects with `en` and `fr` keys (bilingual) |
 | `notebook`       | notebooks  | path to the `.ipynb` relative to repo root |
 | `canalu`         | videos     | Canal-U iframe embed URL |
 
-`tutorials.json` is validated in CI — a malformed file fails the build before
+`tutorials.json` is validated in CI by
+[`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) — malformed JSON,
+missing fields, an unknown tag, or more than 5 tags fail the build before
 anything is published.
 
 ## Where it shows up

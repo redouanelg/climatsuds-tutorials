@@ -22,6 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate tutorials.json (tag scheme + fields)
+        run: python scripts/validate_tutorials.py
       - name: Install nbconvert
         run: pip install --upgrade nbconvert
       - name: Strip Colab widget metadata (avoids nbconvert KeyError 'state')
@@ -54,8 +56,7 @@ jobs:
         run: |
           set -e
           if [ -f tutorials.json ]; then
-            python -c "import json; json.load(open('tutorials.json'))"  # fail fast on malformed JSON
-            cp tutorials.json _site/tutorials.json
+            cp tutorials.json _site/tutorials.json   # already validated earlier in the build
             echo "Published tutorials.json"
           else
             echo "No tutorials.json found; skipping."
