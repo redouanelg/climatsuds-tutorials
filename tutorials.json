@@ -3,7 +3,7 @@
     {
       "id": "arraylake-era5-access",
       "type": "notebook",
-      "tags": ["data-access", "era5", "python"],
+      "tags": ["data-access", "era5", "reanalysis", "temperature", "global"],
       "lang": "en",
       "title": {
         "en": "Accessing ERA5 data with Arraylake",
@@ -18,7 +18,7 @@
     {
       "id": "imerg-v7-daily-west-africa",
       "type": "notebook",
-      "tags": ["data-access", "imerg", "precipitation", "west-africa", "python"],
+      "tags": ["data-access", "imerg", "satellite", "precipitation", "africa"],
       "lang": "en",
       "title": {
         "en": "Accessing daily IMERG v7 precipitation over West Africa",
@@ -33,7 +33,7 @@
     {
       "id": "ghcn-casablanca-station",
       "type": "notebook",
-      "tags": ["data-access", "ghcn", "station-observations", "morocco", "temperature", "python"],
+      "tags": ["data-access", "ghcn", "station-observations", "temperature", "africa"],
       "lang": "en",
       "title": {
         "en": "Casablanca's climate from ground stations (GHCN-Daily)",
