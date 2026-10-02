@@ -75,9 +75,14 @@ Videos are not stored here — only referenced. On the Canal-U video page, open
   "lang": "fr",
   "title": { "en": "Platform overview", "fr": "Présentation de la plateforme" },
   "desc":  { "en": "A short tour.", "fr": "Une visite rapide." },
-  "canalu": "https://www.canal-u.tv/.../embed"
+  "author": "Jane Doe (IRD)",
+  "canalu": "https://www.canal-u.tv/.../embed",
+  "thumbnail": "thumbnails/platform-overview.jpg"
 }
 ```
+
+For the thumbnail, use the video's Canal-U poster (the `poster` image of the
+embed page), resized to 640×360 JPEG and saved as `thumbnails/<id>.jpg`.
 
 ## Add a guide (external link)
 
@@ -115,6 +120,8 @@ The file is a single object: `{ "tutorials": [ … ] }`.
 | `notebook`       | notebooks  | path to the `.ipynb` relative to repo root |
 | `canalu`         | videos     | Canal-U iframe embed URL |
 | `url`            | guides     | link to the externally hosted guide (e.g. Quarto) |
+| `author`         | all (optional) | display name(s) shown on the card, e.g. `"Jane Doe (IRD)"` |
+| `thumbnail`      | all (optional) | card image: a file under `thumbnails/` (published to Pages) or an http(s) URL; without one, the card shows a colored icon |
 
 `tutorials.json` is validated in CI by
 [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) — malformed JSON,

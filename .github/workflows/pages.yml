@@ -61,6 +61,12 @@ jobs:
           else
             echo "No tutorials.json found; skipping."
           fi
+      - name: Publish thumbnails
+        run: |
+          if [ -d thumbnails ]; then
+            cp -R thumbnails _site/thumbnails
+            echo "Published $(ls thumbnails | wc -l) thumbnails"
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

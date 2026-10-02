@@ -19,6 +19,7 @@
         "en": "Open and explore ERA5 reanalysis data from the cloud with Arraylake and xarray.",
         "fr": "Ouvrir et explorer les données de réanalyse ERA5 depuis le cloud avec Arraylake et xarray."
       },
+      "author": "Redouane Lguensat (IPSL/IRD)",
       "notebook": "Data_Access/arraylake_era5_access.ipynb"
     },
     {
@@ -40,6 +41,7 @@
         "en": "Search and open NASA GPM IMERG v7 daily precipitation from the cloud with earthaccess and xarray, then map it over West Africa.",
         "fr": "Rechercher et ouvrir les précipitations quotidiennes NASA GPM IMERG v7 depuis le cloud avec earthaccess et xarray, puis les cartographier sur l'Afrique de l'Ouest."
       },
+      "author": "Redouane Lguensat (IPSL/IRD)",
       "notebook": "Data_Access/imerg_v7_daily_west_africa_access.ipynb"
     },
     {
@@ -61,6 +63,7 @@
         "en": "Read daily station observations for Casablanca since 1980 from NOAA GHCN-Daily (anonymous cloud access) with pandas, and chart its seasonal cycle, warming trend, and rainfall variability.",
         "fr": "Lire les observations quotidiennes de station pour Casablanca depuis 1980 (NOAA GHCN-Daily, accès cloud anonyme) avec pandas, et tracer son cycle saisonnier, sa tendance au réchauffement et la variabilité des pluies."
       },
+      "author": "Redouane Lguensat (IPSL/IRD)",
       "notebook": "Data_Access/casablanca_ghcn_station_observations.ipynb"
     },
     {
@@ -81,6 +84,7 @@
         "en": "An end-to-end, hands-on workflow for hydro-climatic modelling: model calibration, bias correction, hydrological simulation, and extreme-flood analysis.",
         "fr": "Une chaîne de traitement complète et pratique pour la modélisation hydro-climatique : calibration des modèles, correction de biais, simulation hydrologique et analyse des crues extrêmes."
       },
+      "author": "Yves Tramblay (IRD), Serigne Bassirou Diop (UGB)",
       "url": "https://sbdiop.quarto.pub/hydro-climatic-modelling-workflow-a-practical-guide/"
     },
     {
@@ -101,6 +105,7 @@
         "en": "A hands-on tutorial on extreme value analysis for hydrological data: block-maxima (GEV) and peaks-over-threshold (POT) approaches.",
         "fr": "Un tutoriel pratique sur l'analyse des valeurs extrêmes pour les données hydrologiques : approches des maxima par blocs (GEV) et des dépassements de seuil (POT)."
       },
+      "author": "Yves Tramblay (IRD), Serigne Bassirou Diop (UGB)",
       "url": "https://diopbachir.github.io/tp_eva/"
     },
     {
@@ -112,10 +117,12 @@
         "fr": "Mécanismes de la variabilité climatique"
       },
       "desc": {
-        "en": "How can we explain year-to-year variations in climate? This video introduces the climate system and its three sources of variability: internal, natural external, and human. With Laurent Terray.",
-        "fr": "Comment expliquer les variations du climat d'une année à l'autre ? Cette vidéo présente le système climatique et ses trois sources de variabilité : interne, externe naturelle, humaine. Avec Laurent Terray."
+        "en": "How can we explain year-to-year variations in climate? This video introduces the climate system and its three sources of variability: internal, natural external, and human.",
+        "fr": "Comment expliquer les variations du climat d'une année à l'autre ? Cette vidéo présente le système climatique et ses trois sources de variabilité : interne, externe naturelle, humaine."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181688?t=0"
+      "author": "Laurent Terray (CERFACS)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181688?t=0",
+      "thumbnail": "thumbnails/climate-variability-mechanisms.jpg"
     },
     {
       "id": "oceans-and-climate",
@@ -126,10 +133,12 @@
         "fr": "Liens entre océans et climat"
       },
       "desc": {
-        "en": "What role does the ocean play in climate? This video explains how the ocean regulates temperatures, absorbs CO2, and drives phenomena such as El Niño (ENSO). With Juliette Mignot.",
-        "fr": "Quel est le rôle de l'océan dans le climat ? Cette vidéo explique comment l'océan régule les températures, absorbe le CO2, et génère des phénomènes comme El Niño (ENSO). Avec Juliette Mignot."
+        "en": "What role does the ocean play in climate? This video explains how the ocean regulates temperatures, absorbs CO2, and drives phenomena such as El Niño (ENSO).",
+        "fr": "Quel est le rôle de l'océan dans le climat ? Cette vidéo explique comment l'océan régule les températures, absorbe le CO2, et génère des phénomènes comme El Niño (ENSO)."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181682?t=0"
+      "author": "Juliette Mignot (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181682?t=0",
+      "thumbnail": "thumbnails/oceans-and-climate.jpg"
     },
     {
       "id": "ipcc-climate-projections-scenarios",
@@ -140,10 +149,12 @@
         "fr": "Les projections climatiques et les scénarios du GIEC"
       },
       "desc": {
-        "en": "The IPCC climate scenarios (SSPs) resemble past climates of the Earth. This video connects future projections with the major climate fluctuations of the planet's history. With Myriam Khodri-Chouchou.",
-        "fr": "Les scénarios climatiques du GIEC (SSP) ressemblent à des climats passés de la Terre. Cette vidéo relie projections futures et grandes fluctuations climatiques de l'histoire de la planète. Avec Myriam Khodri-Chouchou."
+        "en": "The IPCC climate scenarios (SSPs) resemble past climates of the Earth. This video connects future projections with the major climate fluctuations of the planet's history.",
+        "fr": "Les scénarios climatiques du GIEC (SSP) ressemblent à des climats passés de la Terre. Cette vidéo relie projections futures et grandes fluctuations climatiques de l'histoire de la planète."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181701?t=0"
+      "author": "Myriam Khodri (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181701?t=0",
+      "thumbnail": "thumbnails/ipcc-climate-projections-scenarios.jpg"
     },
     {
       "id": "what-is-a-climate-model",
@@ -154,10 +165,12 @@
         "fr": "Qu’est-ce qu’un modèle climatique ?"
       },
       "desc": {
-        "en": "How does a climate model work? This video introduces global climate models, their resolution, and their role in projections of future climate. With Lola Corre.",
-        "fr": "Comment fonctionne un modèle climatique ? Cette vidéo présente les modèles climatiques globaux, leur résolution et leur rôle dans les projections climatiques futures. Avec Lola Corre."
+        "en": "How does a climate model work? This video introduces global climate models, their resolution, and their role in projections of future climate.",
+        "fr": "Comment fonctionne un modèle climatique ? Cette vidéo présente les modèles climatiques globaux, leur résolution et leur rôle dans les projections climatiques futures."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181685?t=0"
+      "author": "Lola Corre (Météo-France/CNRM)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181685?t=0",
+      "thumbnail": "thumbnails/what-is-a-climate-model.jpg"
     },
     {
       "id": "attribution-observed-climate-change",
@@ -168,10 +181,12 @@
         "fr": "Attribution des changements climatiques observés"
       },
       "desc": {
-        "en": "Can we say that an extreme event is caused by climate change? This video explains the science of attribution, which compares factual and counterfactual worlds. With Aglaé Jézéquel.",
-        "fr": "Peut-on dire qu'un événement extrême est dû au changement climatique ? Cette vidéo explique la science de l'attribution, qui compare des mondes factuel et contrefactuel. Avec Aglaé Jézéquel."
+        "en": "Can we say that an extreme event is caused by climate change? This video explains the science of attribution, which compares factual and counterfactual worlds.",
+        "fr": "Peut-on dire qu'un événement extrême est dû au changement climatique ? Cette vidéo explique la science de l'attribution, qui compare des mondes factuel et contrefactuel."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181674?t=0"
+      "author": "Aglaé Jézéquel (ENPC)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181674?t=0",
+      "thumbnail": "thumbnails/attribution-observed-climate-change.jpg"
     },
     {
       "id": "uncertainties-climate-projections",
@@ -182,10 +197,12 @@
         "fr": "Des incertitudes dans les projections climatiques"
       },
       "desc": {
-        "en": "Why are climate projections uncertain? This video explains the sources of uncertainty (emissions scenario, models, natural variability) and how to estimate them. With Benoît Hingray.",
-        "fr": "Pourquoi les projections climatiques sont-elles incertaines ? Cette vidéo explique les sources d'incertitude : scénario d'émissions, modèles, variabilité naturelle, et comment les estimer. Avec Benoît Hingray."
+        "en": "Why are climate projections uncertain? This video explains the sources of uncertainty (emissions scenario, models, natural variability) and how to estimate them.",
+        "fr": "Pourquoi les projections climatiques sont-elles incertaines ? Cette vidéo explique les sources d'incertitude : scénario d'émissions, modèles, variabilité naturelle, et comment les estimer."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181672?t=0"
+      "author": "Benoit Hingray (CNRS)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181672?t=0",
+      "thumbnail": "thumbnails/uncertainties-climate-projections.jpg"
     },
     {
       "id": "bias-correction-downscaling",
@@ -196,10 +213,12 @@
         "fr": "Correction des biais des modèles de climat et downscaling"
       },
       "desc": {
-        "en": "How do you go from a global climate map to the scale of your city? This video explains two key tools: bias correction and downscaling. With Redouane Lguensat.",
-        "fr": "Comment passer d'une carte climatique mondiale à l'échelle de votre ville ? Cette vidéo explique deux outils clés : la correction de biais et le downscaling (descente d'échelle). Avec Redouane Lguensat."
+        "en": "How do you go from a global climate map to the scale of your city? This video explains two key tools: bias correction and downscaling.",
+        "fr": "Comment passer d'une carte climatique mondiale à l'échelle de votre ville ? Cette vidéo explique deux outils clés : la correction de biais et le downscaling (descente d'échelle)."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181677?t=0"
+      "author": "Redouane Lguensat (IRD/IPSL)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181677?t=0",
+      "thumbnail": "thumbnails/bias-correction-downscaling.jpg"
     },
     {
       "id": "regional-climate-models",
@@ -210,10 +229,12 @@
         "fr": "Modèles de climat régionaux"
       },
       "desc": {
-        "en": "How can climate be simulated at the regional scale? This video introduces regional climate models (RCMs), how they work, how they are used, and the international CORDEX initiative. With Samuel Somot.",
-        "fr": "Comment simuler le climat à l'échelle régionale ? Cette vidéo présente les modèles régionaux de climat (MRC), leur fonctionnement, leurs usages et l'initiative internationale CORDEX. Avec Samuel Somot."
+        "en": "How can climate be simulated at the regional scale? This video introduces regional climate models (RCMs), how they work, how they are used, and the international CORDEX initiative.",
+        "fr": "Comment simuler le climat à l'échelle régionale ? Cette vidéo présente les modèles régionaux de climat (MRC), leur fonctionnement, leurs usages et l'initiative internationale CORDEX."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181683?t=0"
+      "author": "Samuel Somot (Météo-France/CNRM)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181683?t=0",
+      "thumbnail": "thumbnails/regional-climate-models.jpg"
     },
     {
       "id": "km-scale-climate-models",
@@ -224,10 +245,12 @@
         "fr": "Apport des modèles de climat à résolution kilométrique"
       },
       "desc": {
-        "en": "Modelling climate down to the kilometre: this video presents kilometre-scale regional climate models, what they bring for extremes and urban climate, and their limitations. With Cecile Caillaud.",
-        "fr": "Modéliser le climat au kilomètre près : cette vidéo présente les modèles régionaux de climat à échelle kilométrique, leurs apports pour les extrêmes et le climat urbain, et leurs limites. Avec Cecile Caillaud."
+        "en": "Modelling climate down to the kilometre: this video presents kilometre-scale regional climate models, what they bring for extremes and urban climate, and their limitations.",
+        "fr": "Modéliser le climat au kilomètre près : cette vidéo présente les modèles régionaux de climat à échelle kilométrique, leurs apports pour les extrêmes et le climat urbain, et leurs limites."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181687?t=0"
+      "author": "Cécile Caillaud (Météo-France/CNRM)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181687?t=0",
+      "thumbnail": "thumbnails/km-scale-climate-models.jpg"
     },
     {
       "id": "climate-change-west-africa",
@@ -238,10 +261,12 @@
         "fr": "Changements climatiques en Afrique de l’Ouest"
       },
       "desc": {
-        "en": "What does the IPCC tell us about the future climate of West Africa? This video unpacks the risks: heat, rainfall, droughts, coastal flooding, and pressure on water resources. With Arona Diedhiou.",
-        "fr": "Que nous apprend le GIEC sur le climat futur de l'Afrique de l'Ouest ? Cette vidéo décrypte les risques : chaleur, pluies, sécheresses, submersion côtière et tensions sur l'eau. Avec Arona Diedhiou."
+        "en": "What does the IPCC tell us about the future climate of West Africa? This video unpacks the risks: heat, rainfall, droughts, coastal flooding, and pressure on water resources.",
+        "fr": "Que nous apprend le GIEC sur le climat futur de l'Afrique de l'Ouest ? Cette vidéo décrypte les risques : chaleur, pluies, sécheresses, submersion côtière et tensions sur l'eau."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181697?t=0"
+      "author": "Arona Diedhiou (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181697?t=0",
+      "thumbnail": "thumbnails/climate-change-west-africa.jpg"
     },
     {
       "id": "climate-change-mediterranean-north-africa",
@@ -252,10 +277,12 @@
         "fr": "Changement climatique en Méditerranée et Afrique du Nord"
       },
       "desc": {
-        "en": "Why are the Mediterranean and North Africa warming faster than the rest of the world? This video explores droughts, flash floods, and adaptation challenges. With Meryem Tanarhte.",
-        "fr": "Pourquoi la Méditerranée et l'Afrique du Nord se réchauffent-elles plus vite que le reste du monde ? Cette vidéo explore sécheresses, inondations soudaines et enjeux d'adaptation. Avec Meryem Tanarhte."
+        "en": "Why are the Mediterranean and North Africa warming faster than the rest of the world? This video explores droughts, flash floods, and adaptation challenges.",
+        "fr": "Pourquoi la Méditerranée et l'Afrique du Nord se réchauffent-elles plus vite que le reste du monde ? Cette vidéo explore sécheresses, inondations soudaines et enjeux d'adaptation."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181693?t=0"
+      "author": "Meryem Tanarhte (Université Hassan II)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181693?t=0",
+      "thumbnail": "thumbnails/climate-change-mediterranean-north-africa.jpg"
     },
     {
       "id": "climate-change-latin-america",
@@ -266,10 +293,12 @@
         "fr": "Changement climatique en Amérique latine"
       },
       "desc": {
-        "en": "What climate changes can South America expect? This video presents the IPCC projections for the continent: temperatures, precipitation, Andean glaciers, wildfires, and droughts. With Lluis Fita Borrell.",
-        "fr": "Quels changements climatiques attendre en Amérique du Sud ? Cette vidéo présente les projections du GIEC pour le continent : températures, précipitations, glaciers andins, incendies et sécheresses. Avec Lluis Fita Borrell."
+        "en": "What climate changes can South America expect? This video presents the IPCC projections for the continent: temperatures, precipitation, Andean glaciers, wildfires, and droughts.",
+        "fr": "Quels changements climatiques attendre en Amérique du Sud ? Cette vidéo présente les projections du GIEC pour le continent : températures, précipitations, glaciers andins, incendies et sécheresses."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181691?t=0"
+      "author": "Lluis Fita Borrell (CIMA, Universidad de Buenos Aires)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181691?t=0",
+      "thumbnail": "thumbnails/climate-change-latin-america.jpg"
     },
     {
       "id": "who-uses-climate-services",
@@ -280,10 +309,12 @@
         "fr": "À qui servent les services climatiques ?"
       },
       "desc": {
-        "en": "This video shows how climate services turn scientific data into decision-support tools that help societies adapt to global change. With Christophe Lavaysse.",
-        "fr": "Cette vidéo montre comment les services climatiques traduisent les données scientifiques en outils d'aide à la décision pour adapter les sociétés aux changements globaux. Avec Christophe Lavaysse."
+        "en": "This video shows how climate services turn scientific data into decision-support tools that help societies adapt to global change.",
+        "fr": "Cette vidéo montre comment les services climatiques traduisent les données scientifiques en outils d'aide à la décision pour adapter les sociétés aux changements globaux."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181695?t=0"
+      "author": "Christophe Lavaysse (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181695?t=0",
+      "thumbnail": "thumbnails/who-uses-climate-services.jpg"
     },
     {
       "id": "climatsuds-model-selection-tool",
@@ -294,10 +325,12 @@
         "fr": "Utilisation de l’outil de sélection des modèles de climat du site ClimatSuds"
       },
       "desc": {
-        "en": "How do you choose among the twenty or so available climate models? This video presents the model selection tool of the ClimatSuds platform, illustrated over West Africa. With Benjamin Sultan.",
-        "fr": "Comment choisir parmi la vingtaine de modèles climatiques disponibles ? Cette vidéo présente l'outil de sélection de modèles de la plateforme ClimatSuds, illustré sur l'Afrique de l'Ouest. Avec Benjamin Sultan."
+        "en": "How do you choose among the twenty or so available climate models? This video presents the model selection tool of the ClimatSuds platform, illustrated over West Africa.",
+        "fr": "Comment choisir parmi la vingtaine de modèles climatiques disponibles ? Cette vidéo présente l'outil de sélection de modèles de la plateforme ClimatSuds, illustré sur l'Afrique de l'Ouest."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181699?t=0"
+      "author": "Benjamin Sultan (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181699?t=0",
+      "thumbnail": "thumbnails/climatsuds-model-selection-tool.jpg"
     },
     {
       "id": "climatsuds-data-room",
@@ -308,10 +341,12 @@
         "fr": "Utilisation de la Data Room du site ClimatSuds"
       },
       "desc": {
-        "en": "Discover the features of the ClimatSuds website: country climate summaries with Climate Xplorer, and custom data extraction through the Data Room. With Yves Tramblay.",
-        "fr": "Découvrez les fonctionnalités du site ClimatSuds : résumés climatiques par pays avec Climate Xplorer, et extraction de données personnalisées via la Data Room. Avec Yves Tramblay."
+        "en": "Discover the features of the ClimatSuds website: country climate summaries with Climate Xplorer, and custom data extraction through the Data Room.",
+        "fr": "Découvrez les fonctionnalités du site ClimatSuds : résumés climatiques par pays avec Climate Xplorer, et extraction de données personnalisées via la Data Room."
       },
-      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181698?t=0"
+      "author": "Yves Tramblay (IRD)",
+      "canalu": "https://www.canal-u.tv/chaines/ird/embed/181698?t=0",
+      "thumbnail": "thumbnails/climatsuds-data-room.jpg"
     }
   ]
 }

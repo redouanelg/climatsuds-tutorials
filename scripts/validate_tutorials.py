@@ -11,6 +11,11 @@ Tag rules by type:
   - guide    : up to 5 free-form topical tags (lowercase kebab-case, not the
                controlled vocabulary); requires a `url`.
   - video    : no tags; requires a `canalu` URL.
+
+Optional fields (any type):
+  - author    : display name(s), e.g. "Jane Doe (IRD)" or "A (IRD), B (UGB)".
+  - thumbnail : card image — an http(s) URL, or a file under thumbnails/ in this
+                repo (published to Pages next to tutorials.json).
 """
 import json
 import re
@@ -95,6 +100,21 @@ def validate():
         # lang
         if t.get("lang") not in ("en", "fr"):
             errors.append(f'{loc}: lang must be "en" or "fr"')
+
+        # optional author
+        if "author" in t and not (isinstance(t["author"], str) and t["author"].strip()):
+            errors.append(f"{loc}: author must be a non-empty string")
+
+        # optional thumbnail: http(s) URL, or a file under thumbnails/ (published to Pages)
+        if "thumbnail" in t:
+            thumb = t["thumbnail"]
+            if not (isinstance(thumb, str) and thumb.strip()):
+                errors.append(f"{loc}: thumbnail must be a non-empty string")
+            elif not thumb.startswith("http"):
+                if not thumb.startswith("thumbnails/"):
+                    errors.append(f"{loc}: thumbnail path must be under thumbnails/ (got {thumb!r})")
+                elif not (ROOT / thumb).is_file():
+                    errors.append(f"{loc}: thumbnail file not found: {thumb}")
 
         # bilingual title/desc
         for key in ("title", "desc"):
