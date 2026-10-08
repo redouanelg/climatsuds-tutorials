@@ -1,7 +1,7 @@
 # climatsuds-tutorials
 
 Source notebooks and a content manifest for the **Learning** tab of the
-[ClimatSuds portal](https://climatsuds.ird.fr). Everything in this repo is public.
+[ClimatSuds portal](https://climatsuds.ipsl.fr). Everything in this repo is public.
 
 ## How it works
 
@@ -14,7 +14,7 @@ Source notebooks and a content manifest for the **Learning** tab of the
    to the site root:
    - `Data_Access/foo.ipynb` → `https://redouanelg.github.io/climatsuds-tutorials/Data_Access/foo.html`
 3. The ClimatSuds front-end fetches `tutorials.json` at runtime and renders one
-   card per entry (notebook viewer or Canal-U video). **No front-end change or
+   card per entry (notebook viewer, Canal-U video, or external guide). **No front-end change or
    redeploy is needed** when you add/remove content here.
 
 Notebooks are **rendered, not executed** — CI shows the outputs you saved in the
@@ -45,9 +45,9 @@ notebook, so no data or credentials are ever needed.
 
 Tags are the **sidebar filters** on the Learning tab. **Notebooks** follow a
 fixed scheme: **at most 5 tags**, each drawn from the vocabulary below, with
-**exactly one `section`** tag (typically one per facet). **Guides** use up to 5
-*free-form* topical tags (lowercase kebab-case, not this vocabulary). **Videos
-carry no tags** — omit the field. CI runs
+**exactly one `section`** tag (typically one per facet). **Guides and videos**
+use up to 5 *free-form* topical tags (lowercase kebab-case, not this vocabulary).
+CI runs
 [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) and **fails the
 build** if an entry breaks these rules.
 
@@ -60,8 +60,24 @@ build** if an entry breaks these rules.
 | `region`      | `global`, `africa`, `europe`, `asia`, `americas`, `oceania`, `antarctica` |
 
 Need a value that isn't listed (a new dataset, variable, region…)? Add it to
-`VOCAB` in [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) in the
-same commit, then use it. Check locally first: `python scripts/validate_tutorials.py`.
+`VOCAB` in [`scripts/validate_tutorials.py`](scripts/validate_tutorials.py) **and**
+give it a label in `tagLabels` (see below), in the same commit, then use it.
+Check locally first: `python scripts/validate_tutorials.py`.
+
+### Tag labels
+
+Tags are short codes; the page shows their **label** in the reader's language.
+Every tag in use needs an entry in the top-level `tagLabels` object of
+`tutorials.json` (CI fails otherwise):
+
+```json
+"tagLabels": {
+  "west-africa": { "en": "West Africa", "fr": "Afrique de l'Ouest" }
+}
+```
+
+Reuse an existing tag when one fits (e.g. `precipitation`, `bias-correction`)
+rather than adding a near-duplicate.
 
 ## Add a video tutorial (Canal-U)
 
@@ -75,14 +91,15 @@ Videos are not stored here — only referenced. On the Canal-U video page, open
   "lang": "fr",
   "title": { "en": "Platform overview", "fr": "Présentation de la plateforme" },
   "desc":  { "en": "A short tour.", "fr": "Une visite rapide." },
+  "tags": ["climatsuds", "data"],
   "author": "Jane Doe (IRD)",
   "canalu": "https://www.canal-u.tv/.../embed",
   "thumbnail": "thumbnails/platform-overview.jpg"
 }
 ```
 
-For the thumbnail, use the video's Canal-U poster (the `poster` image of the
-embed page), resized to 640×360 JPEG and saved as `thumbnails/<id>.jpg`.
+For the thumbnail, take a representative frame from the video (e.g. the speaker
+with a slide), save it as a 640×360 JPEG in `thumbnails/<id>.jpg`.
 
 ## Add a guide (external link)
 
@@ -93,7 +110,7 @@ Add an entry with the page `url` and up to 5 free-form topical tags:
 {
   "id": "hydro-climatic-modelling-workflow",
   "type": "guide",
-  "tags": ["hydrology", "modelling", "bias-correction", "floods"],
+  "tags": ["hydrology", "modeling", "bias-correction", "floods"],
   "lang": "en",
   "title": { "en": "English title", "fr": "Titre français" },
   "desc":  { "en": "One-line summary.", "fr": "Résumé en une ligne." },
@@ -108,13 +125,13 @@ also delete the `.ipynb` if you want to stop publishing its HTML.
 
 ## `tutorials.json` field reference
 
-The file is a single object: `{ "tutorials": [ … ] }`.
+The file is a single object: `{ "tutorials": [ … ], "tagLabels": { … } }`.
 
 | field            | applies to | notes |
 |------------------|------------|-------|
 | `id`             | all        | unique, stable slug |
 | `type`           | all        | `"notebook"`, `"video"` or `"guide"` |
-| `tags`           | notebooks, guides | notebooks: controlled vocabulary, one per facet (see [Tags](#tags-controlled-vocabulary)); guides: up to 5 free-form tags; videos: none |
+| `tags`           | all        | notebooks: controlled vocabulary, one per facet (see [Tags](#tags-controlled-vocabulary)); guides and videos: up to 5 free-form tags. Each needs a label in `tagLabels` |
 | `lang`           | all        | `"en"` or `"fr"` (informational) |
 | `title` / `desc` | all        | objects with `en` and `fr` keys (bilingual) |
 | `notebook`       | notebooks  | path to the `.ipynb` relative to repo root |

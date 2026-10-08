@@ -10,7 +10,10 @@ Tag rules by type:
                one `section`. Add new vocabulary values to VOCAB in the same commit.
   - guide    : up to 5 free-form topical tags (lowercase kebab-case, not the
                controlled vocabulary); requires a `url`.
-  - video    : no tags; requires a `canalu` URL.
+  - video    : up to 5 free-form topical tags, like guides; requires a `canalu` URL.
+
+Every tag used by any entry needs a display label in the top-level `tagLabels`
+object: {"tag-slug": {"en": "...", "fr": "..."}}.
 
 Optional fields (any type):
   - author    : display name(s), e.g. "Jane Doe (IRD)" or "A (IRD), B (UGB)".
@@ -87,8 +90,7 @@ def validate():
         elif ttype == "video":
             if not t.get("canalu"):
                 errors.append(f"{loc}: videos need a 'canalu' URL")
-            if t.get("tags"):  # absent or empty is fine — videos carry no tags
-                errors.append(f"{loc}: videos must not have tags (omit the field)")
+            errors.extend(_validate_freeform_tags(t.get("tags"), loc))
         elif ttype == "guide":
             url = t.get("url")
             if not url:
@@ -126,7 +128,24 @@ def validate():
             elif key in t:
                 errors.append(f"{loc}: {key} must be an object with 'en' and 'fr'")
 
+    errors.extend(_validate_tag_labels(data))
     return errors
+
+
+def _validate_tag_labels(data):
+    """Each tag in use needs a bilingual display label in the top-level tagLabels."""
+    labels = data.get("tagLabels", {})
+    if not isinstance(labels, dict):
+        return ["tagLabels must be an object mapping tag -> {\"en\": ..., \"fr\": ...}"]
+    errs = []
+    for tag, label in labels.items():
+        if not (isinstance(label, dict)
+                and all(isinstance(label.get(c), str) and label[c].strip() for c in ("en", "fr"))):
+            errs.append(f"tagLabels['{tag}'] must have non-empty 'en' and 'fr' strings")
+    used = {tag for t in data["tutorials"] for tag in (t.get("tags") or []) if isinstance(tag, str)}
+    for tag in sorted(used - labels.keys()):
+        errs.append(f"tag '{tag}' has no label — add it to tagLabels with 'en' and 'fr'")
+    return errs
 
 
 def _validate_tags(tags, loc):
@@ -157,7 +176,7 @@ def _validate_tags(tags, loc):
 
 
 def _validate_freeform_tags(tags, loc):
-    """Guides may carry up to MAX_TAGS free-form topical tags (no fixed vocabulary)."""
+    """Guides and videos may carry up to MAX_TAGS free-form topical tags (no fixed vocabulary)."""
     if not tags:  # absent or empty is fine
         return []
     if not isinstance(tags, list):

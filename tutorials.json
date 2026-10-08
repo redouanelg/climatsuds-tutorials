@@ -71,7 +71,7 @@
       "type": "guide",
       "tags": [
         "hydrology",
-        "modelling",
+        "modeling",
         "bias-correction",
         "floods"
       ],
@@ -111,6 +111,11 @@
     {
       "id": "climate-variability-mechanisms",
       "type": "video",
+      "tags": [
+        "climate-variability",
+        "nao",
+        "enso"
+      ],
       "lang": "fr",
       "title": {
         "en": "Mechanisms of climate variability",
@@ -127,6 +132,11 @@
     {
       "id": "oceans-and-climate",
       "type": "video",
+      "tags": [
+        "climate-variability",
+        "oceans",
+        "enso"
+      ],
       "lang": "fr",
       "title": {
         "en": "Links between oceans and climate",
@@ -143,6 +153,12 @@
     {
       "id": "ipcc-climate-projections-scenarios",
       "type": "video",
+      "tags": [
+        "scenarios",
+        "climate-models",
+        "ipcc",
+        "paleoclimate"
+      ],
       "lang": "fr",
       "title": {
         "en": "Climate projections and IPCC scenarios",
@@ -159,6 +175,12 @@
     {
       "id": "what-is-a-climate-model",
       "type": "video",
+      "tags": [
+        "climate-models",
+        "equations",
+        "fluid-dynamics",
+        "scenarios"
+      ],
       "lang": "fr",
       "title": {
         "en": "What is a climate model?",
@@ -175,6 +197,11 @@
     {
       "id": "attribution-observed-climate-change",
       "type": "video",
+      "tags": [
+        "attribution",
+        "extreme-events",
+        "probability"
+      ],
       "lang": "fr",
       "title": {
         "en": "Attribution of observed climate change",
@@ -191,6 +218,11 @@
     {
       "id": "uncertainties-climate-projections",
       "type": "video",
+      "tags": [
+        "uncertainty",
+        "climate-variability",
+        "scenarios"
+      ],
       "lang": "fr",
       "title": {
         "en": "Uncertainties in climate projections",
@@ -207,6 +239,10 @@
     {
       "id": "bias-correction-downscaling",
       "type": "video",
+      "tags": [
+        "bias-correction",
+        "downscaling"
+      ],
       "lang": "fr",
       "title": {
         "en": "Bias correction of climate models and downscaling",
@@ -223,6 +259,10 @@
     {
       "id": "regional-climate-models",
       "type": "video",
+      "tags": [
+        "climate-models",
+        "regional-climate-models"
+      ],
       "lang": "fr",
       "title": {
         "en": "Regional climate models",
@@ -239,6 +279,12 @@
     {
       "id": "km-scale-climate-models",
       "type": "video",
+      "tags": [
+        "convection",
+        "climate-models",
+        "high-resolution",
+        "impacts"
+      ],
       "lang": "fr",
       "title": {
         "en": "The value of kilometre-scale climate models",
@@ -255,6 +301,12 @@
     {
       "id": "climate-change-west-africa",
       "type": "video",
+      "tags": [
+        "west-africa",
+        "precipitation",
+        "temperature",
+        "scenarios"
+      ],
       "lang": "fr",
       "title": {
         "en": "Climate change in West Africa",
@@ -271,6 +323,12 @@
     {
       "id": "climate-change-mediterranean-north-africa",
       "type": "video",
+      "tags": [
+        "mediterranean",
+        "precipitation",
+        "temperature",
+        "scenarios"
+      ],
       "lang": "fr",
       "title": {
         "en": "Climate change in the Mediterranean and North Africa",
@@ -287,6 +345,12 @@
     {
       "id": "climate-change-latin-america",
       "type": "video",
+      "tags": [
+        "latin-america",
+        "precipitation",
+        "temperature",
+        "scenarios"
+      ],
       "lang": "fr",
       "title": {
         "en": "Climate change in Latin America",
@@ -303,6 +367,13 @@
     {
       "id": "who-uses-climate-services",
       "type": "video",
+      "tags": [
+        "climate-services",
+        "scientists",
+        "decision-makers",
+        "society",
+        "impacts"
+      ],
       "lang": "fr",
       "title": {
         "en": "Who are climate services for?",
@@ -319,6 +390,12 @@
     {
       "id": "climatsuds-model-selection-tool",
       "type": "video",
+      "tags": [
+        "climatsuds",
+        "data",
+        "multi-model",
+        "uncertainty"
+      ],
       "lang": "fr",
       "title": {
         "en": "Using the ClimatSuds climate model selection tool",
@@ -335,6 +412,13 @@
     {
       "id": "climatsuds-data-room",
       "type": "video",
+      "tags": [
+        "climatsuds",
+        "data",
+        "data-extraction",
+        "cmip6",
+        "cordex"
+      ],
       "lang": "fr",
       "title": {
         "en": "Using the ClimatSuds Data Room",
@@ -348,5 +432,235 @@
       "canalu": "https://www.canal-u.tv/chaines/ird/embed/181698?t=0",
       "thumbnail": "thumbnails/climatsuds-data-room.jpg"
     }
-  ]
+  ],
+  "tagLabels": {
+    "africa": {
+      "en": "Africa",
+      "fr": "Afrique"
+    },
+    "americas": {
+      "en": "Americas",
+      "fr": "Amériques"
+    },
+    "analysis": {
+      "en": "Analysis",
+      "fr": "Analyse"
+    },
+    "antarctica": {
+      "en": "Antarctica",
+      "fr": "Antarctique"
+    },
+    "asia": {
+      "en": "Asia",
+      "fr": "Asie"
+    },
+    "attribution": {
+      "en": "Attribution",
+      "fr": "Attribution"
+    },
+    "bias-correction": {
+      "en": "Bias correction",
+      "fr": "Correction de biais"
+    },
+    "climate-models": {
+      "en": "Climate models",
+      "fr": "Modèles climatiques"
+    },
+    "climate-services": {
+      "en": "Climate services",
+      "fr": "Services climatiques"
+    },
+    "climate-variability": {
+      "en": "Climate variability",
+      "fr": "Variabilité climatique"
+    },
+    "climatsuds": {
+      "en": "ClimatSuds",
+      "fr": "ClimatSuds"
+    },
+    "cmip6": {
+      "en": "CMIP6",
+      "fr": "CMIP6"
+    },
+    "convection": {
+      "en": "Convection",
+      "fr": "Convection"
+    },
+    "cordex": {
+      "en": "CORDEX",
+      "fr": "CORDEX"
+    },
+    "data": {
+      "en": "Data",
+      "fr": "Données"
+    },
+    "data-access": {
+      "en": "Data access",
+      "fr": "Accès aux données"
+    },
+    "data-extraction": {
+      "en": "Data extraction",
+      "fr": "Extraction de données"
+    },
+    "decision-makers": {
+      "en": "Decision-makers",
+      "fr": "Décideurs"
+    },
+    "downscaling": {
+      "en": "Downscaling",
+      "fr": "Changement d'échelle"
+    },
+    "enso": {
+      "en": "ENSO",
+      "fr": "ENSO"
+    },
+    "equations": {
+      "en": "Equations",
+      "fr": "Équations"
+    },
+    "era5": {
+      "en": "ERA5",
+      "fr": "ERA5"
+    },
+    "europe": {
+      "en": "Europe",
+      "fr": "Europe"
+    },
+    "extreme-events": {
+      "en": "Extreme events",
+      "fr": "Évènements extrêmes"
+    },
+    "extreme-value-analysis": {
+      "en": "Extreme value analysis",
+      "fr": "Analyse des valeurs extrêmes"
+    },
+    "floods": {
+      "en": "Floods",
+      "fr": "Crues"
+    },
+    "fluid-dynamics": {
+      "en": "Fluid dynamics",
+      "fr": "Physique des fluides"
+    },
+    "getting-started": {
+      "en": "Getting started",
+      "fr": "Prise en main"
+    },
+    "ghcn": {
+      "en": "GHCN",
+      "fr": "GHCN"
+    },
+    "global": {
+      "en": "Global",
+      "fr": "Monde"
+    },
+    "high-resolution": {
+      "en": "High resolution",
+      "fr": "Haute résolution"
+    },
+    "hydrology": {
+      "en": "Hydrology",
+      "fr": "Hydrologie"
+    },
+    "imerg": {
+      "en": "IMERG",
+      "fr": "IMERG"
+    },
+    "impacts": {
+      "en": "Impacts",
+      "fr": "Impacts"
+    },
+    "ipcc": {
+      "en": "IPCC",
+      "fr": "GIEC"
+    },
+    "latin-america": {
+      "en": "Latin America",
+      "fr": "Amérique latine"
+    },
+    "mediterranean": {
+      "en": "Mediterranean",
+      "fr": "Méditerranée"
+    },
+    "modeling": {
+      "en": "Modeling",
+      "fr": "Modélisation"
+    },
+    "multi-model": {
+      "en": "Multi-model",
+      "fr": "Multi-modèles"
+    },
+    "nao": {
+      "en": "NAO",
+      "fr": "NAO"
+    },
+    "oceania": {
+      "en": "Oceania",
+      "fr": "Océanie"
+    },
+    "oceans": {
+      "en": "Oceans",
+      "fr": "Océans"
+    },
+    "paleoclimate": {
+      "en": "Paleoclimates",
+      "fr": "Paléoclimats"
+    },
+    "precipitation": {
+      "en": "Precipitation",
+      "fr": "Précipitations"
+    },
+    "probability": {
+      "en": "Probability",
+      "fr": "Probabilités"
+    },
+    "reanalysis": {
+      "en": "Reanalysis",
+      "fr": "Réanalyse"
+    },
+    "regional-climate-models": {
+      "en": "Regional climate models (RCM)",
+      "fr": "Modèles régionaux (RCM)"
+    },
+    "satellite": {
+      "en": "Satellite",
+      "fr": "Satellite"
+    },
+    "scenarios": {
+      "en": "Scenarios",
+      "fr": "Scénarios"
+    },
+    "scientists": {
+      "en": "Scientists",
+      "fr": "Scientifiques"
+    },
+    "society": {
+      "en": "Society",
+      "fr": "Société"
+    },
+    "station-observations": {
+      "en": "Station observations",
+      "fr": "Observations en station"
+    },
+    "statistics": {
+      "en": "Statistics",
+      "fr": "Statistiques"
+    },
+    "temperature": {
+      "en": "Temperature",
+      "fr": "Températures"
+    },
+    "uncertainty": {
+      "en": "Uncertainty",
+      "fr": "Incertitudes"
+    },
+    "visualization": {
+      "en": "Visualization",
+      "fr": "Visualisation"
+    },
+    "west-africa": {
+      "en": "West Africa",
+      "fr": "Afrique de l'Ouest"
+    }
+  }
 }
