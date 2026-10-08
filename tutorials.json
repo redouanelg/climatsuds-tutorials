@@ -246,7 +246,8 @@
       "type": "video",
       "tags": [
         "bias-correction",
-        "downscaling"
+        "downscaling",
+        "artificial-intelligence"
       ],
       "lang": "fr",
       "title": {
@@ -454,6 +455,10 @@
     "antarctica": {
       "en": "Antarctica",
       "fr": "Antarctique"
+    },
+    "artificial-intelligence": {
+      "en": "Artificial intelligence",
+      "fr": "Intelligence artificielle"
     },
     "asia": {
       "en": "Asia",
